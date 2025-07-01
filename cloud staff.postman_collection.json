@@ -1,0 +1,2520 @@
+{
+  "info": {
+    "_postman_id": "3c721dd8-46f9-48c2-8cf9-bfdc92265012",
+    "name": "cloud staff",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38189381"
+  },
+  "item": [
+    {
+      "name": "companies",
+      "item": [
+        {
+          "name": "add new company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"company\"); // строгое сравнение\r",
+                  "    pm.expect(responseJson.budget).to.eql(1000000); // проверка подстроки\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with used name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 409\", function () {\r",
+                  "    pm.response.to.have.status(409);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with name.length=0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\" \",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with name.length=2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"co\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with name.length=3",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"com\"); // строгое сравнение\r",
+                  "    pm.expect(responseJson.budget).to.eql(1000000); // проверка подстроки\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"com\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with name.length=250",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"companyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOM\"); // строгое сравнение\r",
+                  "    pm.expect(responseJson.budget).to.eql(1000000); // проверка подстроки\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"companyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOM\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with name.length=251",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"companyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOMcompanyCOM1\",\r\n    \"budget\":1000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=null",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company111\",\r\n    \"budget\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=-1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company111\",\r\n    \"budget\":-1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"company111\"); // строгое сравнение\r",
+                  "    pm.expect(responseJson.budget).to.eql(0); // проверка подстроки\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company111\",\r\n    \"budget\":0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=13 digits before and 2 after the point",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"company1111\"); // строгое сравнение\r",
+                  "    pm.expect(responseJson.budget).to.eql(9999999999999.99); // проверка подстроки\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"company1111\",\r\n    \"budget\":9999999999999.99\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=14 digits before and 2 after the point",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"comp\",\r\n    \"budget\":19999999999999.99\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new company with budget=13 digits before and 3 after the point",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"comp\",\r\n    \"budget\":9999999999999.999\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all companies",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const companies = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка, что ответ - непустой массив\r",
+                  "pm.test(\"Response is an array of companies\", function () {\r",
+                  "    pm.expect(companies).to.be.an(\"array\").that.is.not.empty;\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка структуры каждой компании\r",
+                  "companies.forEach((company, index) => {\r",
+                  "    pm.test(`Company #${index + 1} has correct structure`, function () {\r",
+                  "        pm.expect(company).to.have.property(\"id\").that.is.a(\"number\");\r",
+                  "        pm.expect(company).to.have.property(\"name\").that.is.a(\"string\");\r",
+                  "        pm.expect(company).to.have.property(\"budget\").that.is.a(\"number\");\r",
+                  "        pm.expect(company).to.have.property(\"users\").that.is.an(\"array\");\r",
+                  "    });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/companies",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get company by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"budget\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"users\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"com\");\r",
+                  "    pm.expect(responseJson.budget).to.eql(1000000);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/companies/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete company by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/companies/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get company by id after delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/companies/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка формата ответа\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const response = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка структуры основного объекта\r",
+                  "pm.test(\"Company has required fields\", function () {\r",
+                  "    pm.expect(response).to.be.an('object');\r",
+                  "    pm.expect(response).to.have.all.keys('id', 'name', 'budget', 'users');\r",
+                  "    pm.expect(response.users).to.be.an('array');\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка типов данных и значений\r",
+                  "pm.test(\"Check company field values\", function () {\r",
+                  "    pm.expect(response.id).to.be.a('number').and.to.equal(3);\r",
+                  "    pm.expect(response.name).to.be.a('string').and.to.equal('update');\r",
+                  "    pm.expect(response.budget).to.be.a('number').and.to.equal(99999);\r",
+                  "});\r",
+                  "\r",
+                  "// 6. Проверка структуры пользователей\r",
+                  "pm.test(\"Users have correct structure\", function () {\r",
+                  "    response.users.forEach(user => {\r",
+                  "        pm.expect(user).to.have.all.keys('id', 'name', 'lastName', 'phoneNumber');\r",
+                  "        pm.expect(user.id).to.be.a('number');\r",
+                  "        pm.expect(user.name).to.be.a('string');\r",
+                  "        pm.expect(user.lastName).to.be.a('string');\r",
+                  "        pm.expect(user.phoneNumber).to.be.a('string');\r",
+                  "    });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"update\",\r\n    \"budget\":99999\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies/3",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка формата ответа\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const response = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка структуры основного объекта\r",
+                  "pm.test(\"Company has required fields\", function () {\r",
+                  "    pm.expect(response).to.be.an('object');\r",
+                  "    pm.expect(response).to.have.all.keys('id', 'name', 'budget', 'users');\r",
+                  "    pm.expect(response.users).to.be.an('array');\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка типов данных и значений\r",
+                  "pm.test(\"Check company field values\", function () {\r",
+                  "    pm.expect(response.id).to.be.a('number').and.to.equal(3);\r",
+                  "    pm.expect(response.name).to.be.a('string').and.to.equal('update');\r",
+                  "    pm.expect(response.budget).to.be.a('number').and.to.equal(99999);\r",
+                  "});\r",
+                  "\r",
+                  "// 6. Проверка структуры пользователей\r",
+                  "pm.test(\"Users have correct structure\", function () {\r",
+                  "    response.users.forEach(user => {\r",
+                  "        pm.expect(user).to.have.all.keys('id', 'name', 'lastName', 'phoneNumber');\r",
+                  "        pm.expect(user.id).to.be.a('number');\r",
+                  "        pm.expect(user.name).to.be.a('string');\r",
+                  "        pm.expect(user.lastName).to.be.a('string');\r",
+                  "        pm.expect(user.phoneNumber).to.be.a('string');\r",
+                  "    });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"update\",\r\n    \"budget\":99999\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/companies/3",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "companies",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "add new user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990000\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with used phone number",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 409\", function () {\r",
+                  "    pm.response.to.have.status(409);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with name=null",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with name.length=0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\" \",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with name.length=1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"u\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990001\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"u\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990001\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with name.length=100",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990002\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990002\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with name.length=101",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with lastName.length=0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\" \",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with lastName.length=1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"u\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990004\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"u\",\r\n    \"phoneNumber\":\"9999990004\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with lastName.length=100",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"uuu\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990005\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"uuu\",\r\n    \"lastName\":\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\",\r\n    \"phoneNumber\":\"9999990005\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with lastName.length=101",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\",\r\n    \"phoneNumber\":\"9999990000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with phoneNumber.length=0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with phoneNumber.length=9",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\" \",\r\n    \"phoneNumber\":\"999999000\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with phoneNumber.length=10",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990009\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990009\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with phoneNumber.length=35",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999999999\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"+ 7 - ( 9 9 9 ) - 9 9 9 - 9 9 - 9 9\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with phoneNumber.length=36",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"+ 7 - ( 9 9 9 ) - 9 9 9 - 9 9 - 9 99\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with companyId = null",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"79999999999\",\r\n    \"companyId\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with companyId = -1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\" \",\r\n    \"phoneNumber\":\"999999000\",\r\n    \"companyId\":-1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with companyId = 0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 400\", function () {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\" \",\r\n    \"phoneNumber\":\"999999000\",\r\n    \"companyId\":0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add new user with companyId=1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990077\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"user1\",\r\n    \"lastName\":\"user1\",\r\n    \"phoneNumber\":\"9999990077\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка формата ответа\r",
+                  "pm.test(\"Response is JSON\", function() {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг и базовая проверка структуры\r",
+                  "const users = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Response is non-empty array\", function() {\r",
+                  "    pm.expect(users).to.be.an('array').that.is.not.empty;\r",
+                  "});\r",
+                  "\r",
+                  "// 4. Проверка структуры каждого пользователя\r",
+                  "users.forEach((user, index) => {\r",
+                  "    const userPrefix = `User #${index + 1} (ID: ${user.id})`;\r",
+                  "    \r",
+                  "    pm.test(`${userPrefix} has required fields`, function() {\r",
+                  "        pm.expect(user).to.be.an('object');\r",
+                  "        pm.expect(user).to.have.all.keys('id', 'name', 'lastName', 'phoneNumber', 'company');\r",
+                  "    });\r",
+                  "    \r",
+                  "    pm.test(`${userPrefix} has valid field types`, function() {\r",
+                  "        pm.expect(user.id).to.be.a('number');\r",
+                  "        pm.expect(user.name).to.be.a('string');\r",
+                  "        pm.expect(user.lastName).to.be.a('string');\r",
+                  "        pm.expect(user.phoneNumber).to.be.a('string');\r",
+                  "        pm.expect(user.company).to.be.an('object');\r",
+                  "    });\r",
+                  "    \r",
+                  "    pm.test(`${userPrefix} has valid company data`, function() {\r",
+                  "        pm.expect(user.company).to.have.all.keys('id', 'name', 'budget');\r",
+                  "        pm.expect(user.company.id).to.be.a('number');\r",
+                  "        pm.expect(user.company.name).to.be.a('string');\r",
+                  "        pm.expect(user.company.budget).to.be.a('number');\r",
+                  "    });\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"user1\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999990000\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/users/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 204\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/users/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user by id after delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 404\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/users/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. Проверка кода ответа\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// 2. Проверка, что ответ в формате JSON\r",
+                  "pm.test(\"Response is JSON\", function () {\r",
+                  "    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+                  "});\r",
+                  "\r",
+                  "// 3. Парсинг JSON-ответа\r",
+                  "const responseJson = pm.response.json();\r",
+                  "\r",
+                  "// 4. Проверка наличия полей\r",
+                  "pm.test(\"Response has required fields\", function () {\r",
+                  "    pm.expect(responseJson).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"lastName\");\r",
+                  "    pm.expect(responseJson).to.have.property(\"phoneNumber\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"id\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"name\");\r",
+                  "    pm.expect(responseJson.company).to.have.property(\"budget\");\r",
+                  "});\r",
+                  "\r",
+                  "// 5. Проверка конкретных значений\r",
+                  "pm.test(\"Check field values\", function () {\r",
+                  "    pm.expect(responseJson.id).to.be.a(\"number\"); \r",
+                  "    pm.expect(responseJson.name).to.eql(\"update\");\r",
+                  "    pm.expect(responseJson.lastName).to.eql(\"update\");\r",
+                  "    pm.expect(responseJson.phoneNumber).to.eql(\"79999999521\"); \r",
+                  "    \r",
+                  "    pm.expect(responseJson.company).to.be.an(\"object\");\r",
+                  "    pm.expect(responseJson.company.id).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.name).to.eql(\"company\");\r",
+                  "    pm.expect(responseJson.company.budget).to.be.a(\"number\");\r",
+                  "    pm.expect(responseJson.company.budget).to.eql(1000000.00);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"update\",\r\n    \"lastName\":\"update\",\r\n    \"phoneNumber\":\"79999999521\",\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/users/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "http://localhost:8081",
+      "type": "default"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+services:
+  gateway:
+    build: gateway
+    image: gateway-image
+    container_name: gateway-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - user-service
+      - company-service
+
+  company-service:
+    build: company-server/company-service
+    image: company-service-image
+    container_name: company-service-container
+    ports:
+      - "8081:8081"
+    depends_on:
+      - companies-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://companies-db:5432/companies
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+      - SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
+
+  companies-db:
+    image: postgres:16.1
+    container_name: companies-db-container
+    ports:
+      - "6541:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=companies
+    healthcheck:
+      test: pg_isready -q -d $$POSTGRES_DB -U $$POSTGRES_USER
+      timeout: 5s
+      interval: 5s
+      retries: 10
+
+  user-service:
+    build: user-server/user-service
+    image: user-service-image
+    container_name: user-service-container
+    ports:
+      - "8082:8082"
+    depends_on:
+      - users-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://users-db:5432/users
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+      - SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
+
+  users-db:
+    image: postgres:16.1
+    container_name: users-db-container
+    ports:
+      - "6542:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=users
+    healthcheck:
+      test: pg_isready -q -d $$POSTGRES_DB -U $$POSTGRES_USER
+      timeout: 5s
+      interval: 5s
+      retries: 10
