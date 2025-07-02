@@ -157,7 +157,7 @@ response (201 code)
 
 ```json
 {
-  "id": 6,
+  "id": 1,
   "name": "company1",
   "budget": 1000000,
   "users": null

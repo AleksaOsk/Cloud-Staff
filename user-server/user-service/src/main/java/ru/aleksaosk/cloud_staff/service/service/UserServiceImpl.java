@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto addNewUser(UserRequestDto requestDto) {
-        log.info("Пришел запрос на создание нового пользователя с email = {}", requestDto.getPhoneNumber());
+        log.info("Пришел запрос на создание нового пользователя с phoneNumber = {}", requestDto.getPhoneNumber());
 
         String phoneNumber = UserValidator.normalizePhone(requestDto.getPhoneNumber());
         UserValidator.checkPhoneNumber(userRepository.findByPhoneNumber(phoneNumber));
