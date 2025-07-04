@@ -29,12 +29,11 @@ public class CompanyManager {
                 curUrl,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<UserDto>>() {
+                new ParameterizedTypeReference<>() {
                 }
         );
         return response.getBody();
     }
-
 
     public void deleteUsersByCompanyId(long companyId) {
         log.info("Отправляется запрос на удаление users у company с id = {}", companyId);

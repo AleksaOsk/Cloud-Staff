@@ -34,7 +34,6 @@ public abstract class BaseUserServiceTest {
     protected final CompanyDto companyDto = new CompanyDto(1L, "company",
             new BigDecimal(100));
     protected List<UserResponseDto> userResponseDtoList;
-    protected List<UserShortResponseDto> userShortResponseDtoList;
 
     @BeforeEach
     void setUp() {
@@ -49,7 +48,6 @@ public abstract class BaseUserServiceTest {
         updateResponseDto = UserMapper.mapToUserResponseDto(updatedUser, companyDto);
 
         userShortResponseDto = UserMapper.mapToUserShortResponseDto(user);
-        userShortResponseDtoList = List.of(userShortResponseDto);
 
         userResponseDtoList = List.of(userResponseDto);
     }

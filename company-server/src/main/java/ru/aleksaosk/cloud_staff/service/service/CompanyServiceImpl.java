@@ -24,7 +24,6 @@ public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
     private final CompanyManager companyManager;
 
-
     @Override
     public CompanyResponseDto addNewCompany(CompanyRequestDto requestDto) {
         log.info("Пришел запрос на добавление новой company с name = {}", requestDto.getName());
@@ -42,7 +41,7 @@ public class CompanyServiceImpl implements CompanyService {
             CompanyValidator.checkCompanyName(companyRepository.findByName(requestDto.getName()));
         }
 
-        CompanyMapper.mapToCompany(company, requestDto);
+        CompanyMapper.mapToUpdateCompany(company, requestDto);
         company = companyRepository.save(company);
         return CompanyMapper.mapToCompanyResponseDto(company, companyManager.getUsersShortDtoList(id));
     }

@@ -20,6 +20,15 @@ public final class CompanyMapper {
         return company;
     }
 
+    public static void mapToUpdateCompany(Company company, CompanyUpdateRequestDto requestDto) {
+        if (!requestDto.getName().isBlank() && !company.getName().equals(requestDto.getName())) {
+            company.setName(requestDto.getName());
+        }
+        if (requestDto.getBudget() != null && !company.getBudget().equals(requestDto.getBudget())) {
+            company.setBudget(requestDto.getBudget());
+        }
+    }
+
     public static CompanyResponseDto mapToCompanyResponseDto(Company company) {
         CompanyResponseDto companyResponseDto = new CompanyResponseDto();
         companyResponseDto.setId(company.getId());
@@ -40,15 +49,5 @@ public final class CompanyMapper {
         companyShortResponseDto.setName(company.getName());
         companyShortResponseDto.setBudget(company.getBudget());
         return companyShortResponseDto;
-    }
-
-    public static Company mapToCompany(Company company, CompanyUpdateRequestDto requestDto) {
-        if (!requestDto.getName().isBlank() && !company.getName().equals(requestDto.getName())) {
-            company.setName(requestDto.getName());
-        }
-        if (requestDto.getBudget() != null && !company.getBudget().equals(requestDto.getBudget())) {
-            company.setBudget(requestDto.getBudget());
-        }
-        return company;
     }
 }

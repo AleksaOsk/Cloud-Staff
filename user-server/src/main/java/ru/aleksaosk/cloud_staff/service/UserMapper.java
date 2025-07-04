@@ -39,7 +39,7 @@ public final class UserMapper {
         return userShortResponseDto;
     }
 
-    public static User mapToUser(UserUpdateRequestDto requestDto, User user) {
+    public static void mapToUpdateUser(UserUpdateRequestDto requestDto, User user) {
         if (!requestDto.getName().isBlank() && !user.getName().equals(requestDto.getName())) {
             user.setName(requestDto.getName());
         }
@@ -52,7 +52,5 @@ public final class UserMapper {
         if (requestDto.getCompanyId() != null && !user.getCompanyId().equals(requestDto.getCompanyId())) {
             user.setCompanyId(requestDto.getCompanyId());
         }
-
-        return user;
     }
 }

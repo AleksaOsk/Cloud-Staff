@@ -41,8 +41,8 @@ class ErrorHandler {
     }
 
     @ExceptionHandler
-    @ResponseStatus(HttpStatus.BAD_REQUEST) //400
-    //исключение при срабатывании аннотации на отдельных полях (переменные пути)
+    @ResponseStatus(HttpStatus.BAD_REQUEST) // 400
+    // исключение при срабатывании аннотации на отдельных полях (переменные пути)
     public ErrorResponse handleAnnotationsField(ConstraintViolationException e) {
         String response = e.getConstraintViolations()
                 .stream()
@@ -56,7 +56,7 @@ class ErrorHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    //исключение при срабатывании аннотации на объектах
+    // исключение при срабатывании аннотации на объектах
     public ErrorResponse handleAnnotationsObject(MethodArgumentNotValidException e) {
         String response = Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage();
         log.error("MethodArgumentNotValidException: Пользователь указал некорректные данные. {}", response);
@@ -68,7 +68,7 @@ class ErrorHandler {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleThrowable(final UnsupportedEncodingException e) {
-        log.error("UnsupportedEncodingException: Пользователь указал некорректные данные.");
+        log.error("UnsupportedEncodingException: Пользователь указал некорректные данные. {}", e.getMessage());
         LocalDateTime now = LocalDateTime.now();
         return new ErrorResponse(HttpStatus.BAD_REQUEST.toString(), "The dates are incorrect",
                 "Required format 'yyyy-MM-dd HH:mm:ss'", now.format(formatter));

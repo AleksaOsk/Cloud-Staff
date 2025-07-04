@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
             companyDto = getCompanyDto(user.getCompanyId());
         }
 
-        UserMapper.mapToUser(requestDto, user);
+        UserMapper.mapToUpdateUser(requestDto, user);
         user = userRepository.save(user);
 
         return UserMapper.mapToUserResponseDto(user, companyDto);

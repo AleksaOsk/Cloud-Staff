@@ -30,7 +30,6 @@ public abstract class BaseCompanyServiceTest {
     protected CompanyRequestDto companyRequestDto;
     protected CompanyUpdateRequestDto updateRequestDto;
     protected CompanyResponseDto companyResponseDto, updateResponseDto;
-    protected List<CompanyResponseDto> companyResponseDtoList;
     protected CompanyShortResponseDto companyShortResponseDto;
     protected UserDto userShortResponseDto;
     protected List<UserDto> userShortResponseDtoList;
@@ -40,7 +39,6 @@ public abstract class BaseCompanyServiceTest {
         companyRequestDto = new CompanyRequestDto("name", new BigDecimal(10000));
         company = new Company(1L, companyRequestDto.getName(), companyRequestDto.getBudget());
         companyResponseDto = CompanyMapper.mapToCompanyResponseDto(company);
-        companyResponseDtoList = List.of(companyResponseDto);
 
         updateRequestDto = new CompanyUpdateRequestDto("update name", new BigDecimal(50000));
         updateCompany = new Company(1L, updateRequestDto.getName(), updateRequestDto.getBudget());

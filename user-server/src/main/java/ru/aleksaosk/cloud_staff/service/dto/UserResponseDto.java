@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.aleksaosk.cloud_staff.manager.CompanyDto;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
