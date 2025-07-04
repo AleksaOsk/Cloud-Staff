@@ -6,13 +6,13 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - user-service
-      - company-service
+      - user-server
+      - company-server
 
-  company-service:
-    build: company-server/company-service
-    image: company-service-image
-    container_name: company-service-container
+  company-server:
+    build: company-server
+    image: company-server-image
+    container_name: company-server-container
     ports:
       - "8081:8081"
     depends_on:
@@ -38,10 +38,10 @@ services:
       interval: 5s
       retries: 10
 
-  user-service:
-    build: user-server/user-service
-    image: user-service-image
-    container_name: user-service-container
+  user-server:
+    build: user-server
+    image: user-server-image
+    container_name: user-server-container
     ports:
       - "8082:8082"
     depends_on:

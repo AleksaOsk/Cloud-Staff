@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="179d24db-c38e-40e2-af81-0a76296315ca" name="Changes" comment="add user-server, company-server and gateway">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/manager/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/manager/CompanyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/manager/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-client/src/main/java/ru/aleksaosk/cloud_staff/CompanyRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-client/src/main/java/ru/aleksaosk/cloud_staff/CompanyShortResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyShortResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/CompanyAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/CompanyAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/CompanyServiceMainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/CompanyServiceMainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/exception/CompanyNameAlreadyInUseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/exception/CompanyNameAlreadyInUseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/manager/CompanyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/manager/CompanyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyUpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyUpdateRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/entity/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/entity/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/CompanyServiceContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/CompanyServiceContextTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseCompanyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseCompanyControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockDeleteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPatchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPatchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPostTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/service/BaseCompanyServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseCompanyServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceAddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceAddTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceDeleteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/company-service/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceUpdateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-client/src/main/java/ru/aleksaosk/cloud_staff/UserRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-client/src/main/java/ru/aleksaosk/cloud_staff/UserShortResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserShortResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/UserAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/UserAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/UserServiceMainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/UserServiceMainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/exception/InvalidPhoneNumberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/exception/InvalidPhoneNumberException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/exception/PhoneNumberAlreadyInUseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/exception/PhoneNumberAlreadyInUseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/exception/error/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/manager/UserManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserUpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserUpdateRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/UserServiceContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/UserServiceContextTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseUserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseUserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockDeleteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPatchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPatchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPostTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/service/BaseUserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseUserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceAddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceAddTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceDeleteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-server/user-service/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceUpdateTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AleksaOsk&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1750957163" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1750957162" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AleksaOsk/Cloud-Staff.git&quot;,
+    &quot;accountId&quot;: &quot;98e18568-a723-4de6-9807-6da08ccaf801&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2z3L7rISderSvwE9CIE4riH4LpM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CompanyServiceMainApp.executor": "Run",
+    "Application.GatewayMainApp.executor": "Run",
+    "Application.UserServiceMainApp.executor": "Run",
+    "Application.ru.aleksaosk.cloud_staff.CompanyServiceMainApp.executor": "Run",
+    "Application.ru.aleksaosk.cloud_staff.UserServiceMainApp.executor": "Run",
+    "Docker.docker-compose.yml.company-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.gateway: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.user-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.users-db: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.All in company-server.executor": "Run",
+    "JUnit.All in company-service.executor": "Coverage",
+    "JUnit.All in user-server.executor": "Run",
+    "JUnit.All in user-service.executor": "Coverage",
+    "JUnit.CloudStaffTests.executor": "Run",
+    "JUnit.CompanyControllerMockGetTest.executor": "Run",
+    "JUnit.CompanyControllerMockGetTest.getCompany.executor": "Run",
+    "JUnit.CompanyControllerMockPatchTest.updateUser.executor": "Run",
+    "JUnit.CompanyControllerMockPostTest.addNewCompany.executor": "Run",
+    "JUnit.CompanyControllerMockPostTest.executor": "Run",
+    "JUnit.CompanyServiceAddTest.createCompany.executor": "Run",
+    "JUnit.CompanyServiceContextTest.contextLoads.executor": "Run",
+    "JUnit.CompanyServiceDeleteTest.deleteCompany.executor": "Run",
+    "JUnit.CompanyServiceGetTest.executor": "Run",
+    "JUnit.CompanyServiceUpdateTest.executor": "Run",
+    "JUnit.CompanyServiceUpdateTest.updateCompany.executor": "Run",
+    "JUnit.UserControllerDELETEMockTest.executor": "Run",
+    "JUnit.UserControllerMockGetTest.executor": "Run",
+    "JUnit.UserControllerMockPostTest.addNewUserWithEmptyPhoneNumber.executor": "Run",
+    "JUnit.UserControllerMockPostTest.executor": "Run",
+    "JUnit.UserControllerMockTest.addNewUserWithInvalidPhoneNumber.executor": "Run",
+    "JUnit.UserControllerMockTest.addNewUserWithUsedPhoneNumber.executor": "Run",
+    "JUnit.UserControllerMockTest.createUser.executor": "Run",
+    "JUnit.UserControllerMockTest.deleteUser.executor": "Run",
+    "JUnit.UserControllerMockTest.deleteUsersByCompanyId.executor": "Run",
+    "JUnit.UserControllerMockTest.executor": "Run",
+    "JUnit.UserControllerMockTest.getAllUser.executor": "Run",
+    "JUnit.UserControllerMockTest.getAllUsers.executor": "Run",
+    "JUnit.UserControllerMockTest.getUser.executor": "Run",
+    "JUnit.UserControllerMockTest.getUserNotFound.executor": "Run",
+    "JUnit.UserControllerMockTest.getUsersByComponyId.executor": "Run",
+    "JUnit.UserControllerMockTest.updateUser.executor": "Run",
+    "JUnit.UserServiceGetTest.executor": "Run",
+    "JUnit.UserServiceGetTest.getAllUsers.executor": "Run",
+    "JUnit.UserServiceGetTest.getUsersByCompanyId.executor": "Run",
+    "JUnit.UserServiceMockTest.executor": "Run",
+    "JUnit.UserServiceMockTest.updateUser.executor": "Run",
+    "JUnit.java in user-service.executor": "Run",
+    "Maven.cloud_staff [clean,install].executor": "Run",
+    "Maven.cloud_staff [clean].executor": "Run",
+    "Maven.cloud_staff [install].executor": "Run",
+    "Maven.cloud_staff [package].executor": "Run",
+    "Maven.company-server [clean,install].executor": "Run",
+    "Maven.company-server [clean].executor": "Run",
+    "Maven.company-server [install].executor": "Run",
+    "Maven.company-service [clean].executor": "Run",
+    "Maven.company-service [install].executor": "Run",
+    "Maven.gateway [clean,install].executor": "Run",
+    "Maven.user-server [clean,install].executor": "Run",
+    "Maven.user-service [clean].executor": "Run",
+    "Maven.user-service [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Александра/OneDrive/Рабочий стол/java/Cloud Staff — копия",
+    "onboarding.tips.debug.path": "C:/Users/Александра/Downloads/Cloud Staff/company-server/company-client/src/main/java/ru/aleksaosk/cloud_staff/company_server/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.18021794",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff\company-server\company-service\src\test" />
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff\company-server\company-service\src\test\java" />
+      <recent name="C:\Users\Александра\Downloads\Cloud Staff\user-server\user-service\src\test\java" />
+      <recent name="C:\Users\Александра\Downloads\Cloud Staff\gateway" />
+      <recent name="C:\Users\Александра\Downloads\Cloud Staff\user-server\user-service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff — копия\.idea" />
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff\company-server" />
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff\user-server" />
+      <recent name="C:\Users\Александра\OneDrive\Рабочий стол\java\Cloud Staff\postman-tests" />
+      <recent name="C:\Users\Александра\Downloads\Cloud Staff\company-server\company-service\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.aleksaosk.cloud_staff" />
+      <recent name="ru.aleksaosk.cloud_staff.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.aleksaosk.cloud_staff.manager" />
+      <recent name="ru.aleksaosk.cloud_staff.user_service.exception" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+    <configuration name="All in company-server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="company-server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in user-server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseUserServiceTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.aleksaosk.cloud_staff.service.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.aleksaosk.cloud_staff.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.aleksaosk.cloud_staff.service.BaseUserServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanyServiceContextTest.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="company-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.aleksaosk.cloud_staff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.aleksaosk.cloud_staff" />
+      <option name="MAIN_CLASS_NAME" value="ru.aleksaosk.cloud_staff.CompanyServiceContextTest" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in user-service" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/user-server/user-service/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="cloud_staff" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="cloud_staff" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.gateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="gateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.BaseUserServiceTest" />
+      <item itemvalue="JUnit.java in user-service" />
+      <item itemvalue="JUnit.All in company-server" />
+      <item itemvalue="JUnit.CompanyServiceContextTest.contextLoads" />
+      <item itemvalue="JUnit.All in user-server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.gateway: Compose Deployment" />
+        <item itemvalue="JUnit.CompanyServiceContextTest.contextLoads" />
+        <item itemvalue="JUnit.All in company-server" />
+        <item itemvalue="JUnit.All in user-server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="179d24db-c38e-40e2-af81-0a76296315ca" name="Changes" comment="" />
+      <created>1750954647141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750954647141</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add user-server, company-server and gateway">
+      <option name="closed" value="true" />
+      <created>1751385272572</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751385272572</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add user-server, company-server and gateway">
+      <option name="closed" value="true" />
+      <created>1751490208892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751490208892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-context" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add user-server, company-server and gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user-server, company-server and gateway" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/aleksaosk/cloud_staff/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Cloud_Staff$All_in_user_service.ic" NAME="All in user-service Coverage Results" MODIFIED="1751375289791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Cloud_Staff$java_in_user_service.ic" NAME="java in user-service Coverage Results" MODIFIED="1751334294845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Cloud_Staff$All_in_company_service.ic" NAME="All in company-service Coverage Results" MODIFIED="1751374701992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
