@@ -3,12 +3,12 @@ package ru.aleksaosk.cloud_staff.service;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
+import ru.aleksaosk.cloud_staff.dto.UserResponseDto;
+import ru.aleksaosk.cloud_staff.dto.UserUpdateRequestDto;
+import ru.aleksaosk.cloud_staff.entity.User;
 import ru.aleksaosk.cloud_staff.exception.InvalidPhoneNumberException;
 import ru.aleksaosk.cloud_staff.exception.NotFoundException;
 import ru.aleksaosk.cloud_staff.exception.PhoneNumberAlreadyInUseException;
-import ru.aleksaosk.cloud_staff.service.dto.UserResponseDto;
-import ru.aleksaosk.cloud_staff.service.dto.UserUpdateRequestDto;
-import ru.aleksaosk.cloud_staff.service.entity.User;
 
 import java.util.Optional;
 

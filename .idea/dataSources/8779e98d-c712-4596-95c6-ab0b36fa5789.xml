@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>36812</IntrospectionStateNumber>
+      <IntrospectionStateNumber>36886</IntrospectionStateNumber>
       <ServerVersion>17.0</ServerVersion>
       <StartupTime>1751490590</StartupTime>
       <TimeZones>true ACDT
@@ -837,7 +837,7 @@ false Zulu
 14704||10|C|G
 14704||-9223372036854775808|U|G
 14704||10|U|G</Grants>
-      <IntrospectionStateNumber>36812</IntrospectionStateNumber>
+      <IntrospectionStateNumber>36886</IntrospectionStateNumber>
       <ObjectId>79911</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -922,23 +922,23 @@ false Zulu
     <schema id="32" parent="11" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>36812</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-07-04.16:17:17</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>36886</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-07-05.17:01:24</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="33" parent="32" name="users_id_seq">
-      <ObjectId>80528</ObjectId>
+      <ObjectId>80727</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="34" parent="32" name="users">
-      <ObjectId>80529</ObjectId>
-      <StateNumber>36800</StateNumber>
+      <ObjectId>80728</ObjectId>
+      <StateNumber>36880</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -946,53 +946,53 @@ false Zulu
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>80528</SequenceId>
+      <SequenceId>80727</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="36" parent="34" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="37" parent="34" name="last_name">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="38" parent="34" name="phone_number">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>varchar(20)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="39" parent="34" name="company_id">
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
     <index id="40" parent="34" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80532</ObjectId>
+      <ObjectId>80731</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>36800</StateNumber>
+      <StateNumber>36880</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <index id="41" parent="34" name="users_phone_number_key">
       <ColNames>phone_number</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80534</ObjectId>
-      <StateNumber>36800</StateNumber>
+      <ObjectId>80733</ObjectId>
+      <StateNumber>36880</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -1001,16 +1001,16 @@ false Zulu
     </index>
     <key id="42" parent="34" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80533</ObjectId>
+      <ObjectId>80732</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>36800</StateNumber>
-      <UnderlyingIndexId>80532</UnderlyingIndexId>
+      <StateNumber>36880</StateNumber>
+      <UnderlyingIndexId>80731</UnderlyingIndexId>
     </key>
     <key id="43" parent="34" name="users_phone_number_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80535</ObjectId>
-      <StateNumber>36800</StateNumber>
-      <UnderlyingIndexId>80534</UnderlyingIndexId>
+      <ObjectId>80734</ObjectId>
+      <StateNumber>36880</StateNumber>
+      <UnderlyingIndexId>80733</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

@@ -5,11 +5,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import ru.aleksaosk.cloud_staff.dto.UserRequestDto;
+import ru.aleksaosk.cloud_staff.dto.UserResponseDto;
 import ru.aleksaosk.cloud_staff.exception.InvalidPhoneNumberException;
 import ru.aleksaosk.cloud_staff.exception.PhoneNumberAlreadyInUseException;
-import ru.aleksaosk.cloud_staff.service.UserController;
-import ru.aleksaosk.cloud_staff.service.dto.UserRequestDto;
-import ru.aleksaosk.cloud_staff.service.dto.UserResponseDto;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
