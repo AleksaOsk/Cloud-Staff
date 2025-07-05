@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>36813</IntrospectionStateNumber>
+      <IntrospectionStateNumber>36885</IntrospectionStateNumber>
       <ServerVersion>17.0</ServerVersion>
       <StartupTime>1751490590</StartupTime>
       <TimeZones>true ACDT
@@ -804,7 +804,7 @@ false Zulu
 14704||10|C|G
 14704||-9223372036854775808|U|G
 14704||10|U|G</Grants>
-      <IntrospectionStateNumber>36813</IntrospectionStateNumber>
+      <IntrospectionStateNumber>36885</IntrospectionStateNumber>
       <ObjectId>79910</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -922,23 +922,23 @@ false Zulu
     <schema id="32" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>36813</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-07-04.16:17:19</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>36885</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-07-05.17:01:22</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="33" parent="32" name="companies_id_seq">
-      <ObjectId>80536</ObjectId>
+      <ObjectId>80735</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>36802</StateNumber>
+      <StateNumber>36882</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="34" parent="32" name="companies">
-      <ObjectId>80537</ObjectId>
-      <StateNumber>36802</StateNumber>
+      <ObjectId>80736</ObjectId>
+      <StateNumber>36882</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -946,40 +946,40 @@ false Zulu
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>36802</StateNumber>
+      <StateNumber>36882</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>80536</SequenceId>
+      <SequenceId>80735</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="36" parent="34" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>36802</StateNumber>
+      <StateNumber>36882</StateNumber>
       <StoredType>varchar(250)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="37" parent="34" name="budget">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>36802</StateNumber>
+      <StateNumber>36882</StateNumber>
       <StoredType>numeric(15,2 digit)|0s</StoredType>
       <TypeId>1700</TypeId>
     </column>
     <index id="38" parent="34" name="companies_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80540</ObjectId>
+      <ObjectId>80739</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>36802</StateNumber>
+      <StateNumber>36882</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="39" parent="34" name="companies_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80541</ObjectId>
+      <ObjectId>80740</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>36802</StateNumber>
-      <UnderlyingIndexId>80540</UnderlyingIndexId>
+      <StateNumber>36882</StateNumber>
+      <UnderlyingIndexId>80739</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
