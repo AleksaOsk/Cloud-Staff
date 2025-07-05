@@ -4,62 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="179d24db-c38e-40e2-af81-0a76296315ca" name="Changes" comment="add check-style">
-      <change afterPath="$PROJECT_DIR$/company-server/company-server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-server/user-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f0663dd-e593-40d8-8653-399bfc5671e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7f0663dd-e593-40d8-8653-399bfc5671e1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f0663dd-e593-40d8-8653-399bfc5671e1/storage_v2/_src_/database/companies.2-HJqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7f0663dd-e593-40d8-8653-399bfc5671e1/storage_v2/_src_/database/companies.2-HJqw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8779e98d-c712-4596-95c6-ab0b36fa5789.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8779e98d-c712-4596-95c6-ab0b36fa5789.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8779e98d-c712-4596-95c6-ab0b36fa5789/storage_v2/_src_/database/users.CI6mBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8779e98d-c712-4596-95c6-ab0b36fa5789/storage_v2/_src_/database/users.CI6mBg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="179d24db-c38e-40e2-af81-0a76296315ca" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/manager/CompanyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/manager/CompanyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/controller/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/mapper/CompanyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/repository/CompanyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/validator/CompanyValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/dto/CompanyRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/dto/CompanyResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyShortResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/dto/CompanyShortResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/CompanyUpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/dto/CompanyUpdateRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/entity/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/entity/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/main/java/ru/aleksaosk/cloud_staff/service/CompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseCompanyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseCompanyControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockDeleteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockGetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPatchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPatchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/controller/CompanyControllerMockPostTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseCompanyServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseCompanyServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceAddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceAddTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceGetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-server/src/test/java/ru/aleksaosk/cloud_staff/service/CompanyServiceUpdateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/manager/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/validator/UserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/dto/UserRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/dto/UserResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserShortResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/dto/UserShortResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/dto/UserUpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/dto/UserUpdateRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/main/java/ru/aleksaosk/cloud_staff/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseUserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/BaseUserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockDeleteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockDeleteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockGetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPatchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPatchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/controller/UserControllerMockPostTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseUserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/BaseUserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceAddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceAddTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceGetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-server/src/test/java/ru/aleksaosk/cloud_staff/service/UserServiceUpdateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud staff.postman_collection.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,6 +406,7 @@
       <workItem from="1751725860040" duration="2741000" />
       <workItem from="1751728826267" duration="6356000" />
       <workItem from="1751735392896" duration="217000" />
+      <workItem from="1751735641531" duration="434000" />
     </task>
     <task id="LOCAL-00001" summary="add user-server, company-server and gateway">
       <option name="closed" value="true" />
@@ -492,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751652500680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1751735956965</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751735956965</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +472,8 @@
     <MESSAGE value="add user-server, company-server and gateway" />
     <MESSAGE value="update REST communication" />
     <MESSAGE value="add check-style" />
-    <option name="LAST_COMMIT_MESSAGE" value="add check-style" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
