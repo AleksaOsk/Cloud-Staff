@@ -24,7 +24,7 @@ Gateway в качестве API Gateway.
 
 **Ключевые особенности взаимодействия:**
 
-* Межсервисная коммуникация реализована через `RestTemplate` с JSON-сериализацией Jackson
+* Межсервисная коммуникация реализована через `RestClient` с JSON-сериализацией Jackson
 * `CompanyManager` (Company Server) выполняет:
 	* Получение списка пользователей компании
 	* Удаление пользователей при удалении компании
@@ -51,7 +51,7 @@ Gateway в качестве API Gateway.
 - **База данных**: PostgreSQL
 - **Тестирование**: JUnit 5, Mockito, Slice Tests, Postman
 - **Инфраструктура**: Docker, Docker Compose
-- **Дополнительно**: Lombok, Validation API, RestTemplate
+- **Дополнительно**: Lombok, Validation API, RestClient
 
 ---
 
@@ -231,22 +231,20 @@ CREATE TABLE IF NOT EXISTS COMPANIES(
 
 ## Взаимодействие между сервисами
 
-Для взаимодействия между сервисами используется RestTemplate:
+Для взаимодействия между сервисами используется RestClient:
 
 #### UserRestClient
 
 ```java
-
-@Slf4j
 @Service
-public class UserRestClient {
-    // Реализация методов для работы с пользователями
-    public List<UserShortResponseDto> getUsersShortDtoList(long companyId) {
-        // Логика получения пользователей компании
-    }
+@Slf4j
+public class UserManager {
+    private final RestClient restClient;
+    private final String serverUrl;
 
-    public void deleteUsersByCompanyId(long companyId) {
-        // Логика удаления пользователей компании
+    // Реализация метода для получения информаци о company
+    public CompanyDto getCompanyDto(long companyId) {
+	// Логика получения информации о компании
     }
 }
 ```
@@ -254,13 +252,19 @@ public class UserRestClient {
 #### CompanyRestClient
 
 ```java
-
-@Slf4j
 @Service
-public class CompanyRestClient {
-    // Реализация метода для работы с компаниями
-    public CompanyShortResponseDto getCompanyDto(long compId) {
-        // Логика получения информации о компании
+@Slf4j
+public class CompanyManager {
+    private final RestClient restClient;
+    private final String serverUrl;
+
+    // Реализация методов для получения информации о user
+    public List<UserDto> getUsersShortDtoList(long companyId) {
+	// Логика получения пользователей компании
+    }
+
+    public void deleteUsersByCompanyId(long companyId) {
+        // Логика удаления пользователей компании
     }
 }
 ```
@@ -282,13 +286,19 @@ public class CompanyRestClient {
 В проекте активно используется логирование через SLF4J с Lombok:
 
 ```java
-
+@RestController
+@RequestMapping(path = "/users")
+@AllArgsConstructor
+@Validated
 @Slf4j
-@Service
-public class UserService {
-    public UserResponseDto addNewUser(UserRequestDto requestDto) {
-        log.info("Добавление нового пользователя: {}", requestDto);
-        // Логика метода
+public class UserController {
+    private final UserService userService;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponseDto addNewUser(@RequestBody @Valid UserRequestDto requestDto) {
+        log.info("Пришел запрос на создание нового пользователя с phoneNumber = {}", requestDto.getPhoneNumber());
+        return userService.addNewUser(requestDto);
     }
 }
 ```
