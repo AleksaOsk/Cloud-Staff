@@ -25,14 +25,4 @@
             <version>4.3.0</version> <!-- Явное указание версии -->
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.4.2</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>

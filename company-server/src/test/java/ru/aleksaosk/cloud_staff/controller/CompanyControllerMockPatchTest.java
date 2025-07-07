@@ -5,8 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
-import ru.aleksaosk.cloud_staff.service.CompanyController;
-import ru.aleksaosk.cloud_staff.service.dto.CompanyUpdateRequestDto;
+import ru.aleksaosk.cloud_staff.dto.CompanyUpdateRequestDto;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;

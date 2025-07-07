@@ -5,12 +5,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
+import ru.aleksaosk.cloud_staff.dto.CompanyResponseDto;
 import ru.aleksaosk.cloud_staff.exception.NotFoundException;
-import ru.aleksaosk.cloud_staff.service.CompanyController;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -62,19 +66,23 @@ public class CompanyControllerMockGetTest extends BaseCompanyControllerTest {
 
     @Test
     void getAllCompany() throws Exception {
-        when(companyService.getAllCompanies())
-                .thenReturn(companyResponseDtoList);
+        Page<CompanyResponseDto> companyResponseDtoPage = new PageImpl<>(
+                List.of(companyResponseDto), PageRequest.of(0, 10), 1);
+        List<CompanyResponseDto> companyResponseDtoList = companyResponseDtoPage.getContent();
+
+        when(companyService.getAllCompanies(0, 10))
+                .thenReturn(companyResponseDtoPage);
         mvc.perform(get("/companies")
                         .characterEncoding(StandardCharsets.UTF_8)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].id", is(companyResponseDtoList.get(0).getId()), Long.class))
-                .andExpect(jsonPath("$[0].name", is(companyResponseDtoList.get(0).getName())))
-                .andExpect(jsonPath("$[0].budget", is(companyResponseDtoList.get(0).getBudget()), BigDecimal.class))
-                .andExpect(jsonPath("$[0].users[0].id", is(companyResponseDtoList.get(0).getUsers().get(0).getId()), Long.class))
-                .andExpect(jsonPath("$[0].users[0].name", is(companyResponseDtoList.get(0).getUsers().get(0).getName())))
-                .andExpect(jsonPath("$[0].users[0].lastName", is(companyResponseDtoList.get(0).getUsers().get(0).getLastName())))
-                .andExpect(jsonPath("$[0].users[0].phoneNumber", is(companyResponseDtoList.get(0).getUsers().get(0).getPhoneNumber())));
+                .andExpect(jsonPath("$.content[0].id", is(companyResponseDtoList.get(0).getId()), Long.class))
+                .andExpect(jsonPath("$.content[0].name", is(companyResponseDtoList.get(0).getName())))
+                .andExpect(jsonPath("$.content[0].budget", is(companyResponseDtoList.get(0).getBudget()), BigDecimal.class))
+                .andExpect(jsonPath("$.content[0].users[0].id", is(companyResponseDtoList.get(0).getUsers().get(0).getId()), Long.class))
+                .andExpect(jsonPath("$.content[0].users[0].name", is(companyResponseDtoList.get(0).getUsers().get(0).getName())))
+                .andExpect(jsonPath("$.content[0].users[0].lastName", is(companyResponseDtoList.get(0).getUsers().get(0).getLastName())))
+                .andExpect(jsonPath("$.content[0].users[0].phoneNumber", is(companyResponseDtoList.get(0).getUsers().get(0).getPhoneNumber())));
     }
 
     @Test

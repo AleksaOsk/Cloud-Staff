@@ -4,10 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
+import ru.aleksaosk.cloud_staff.dto.CompanyResponseDto;
+import ru.aleksaosk.cloud_staff.entity.Company;
 import ru.aleksaosk.cloud_staff.exception.CompanyNameAlreadyInUseException;
 import ru.aleksaosk.cloud_staff.exception.NotFoundException;
-import ru.aleksaosk.cloud_staff.service.dto.CompanyResponseDto;
-import ru.aleksaosk.cloud_staff.service.entity.Company;
 
 import java.util.Optional;
 
